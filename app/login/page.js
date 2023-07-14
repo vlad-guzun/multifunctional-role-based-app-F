@@ -5,7 +5,7 @@ import { AuthContext } from '@/context/AuthContext'
 import AuthServices from '@/services/AuthServices'
 import {useRouter} from 'next/navigation'
 import Message from '@/components/Message'
-
+import Link from 'next/link'
 
 const LoginPage = (props) => {
   const router = useRouter()
@@ -31,7 +31,7 @@ const LoginPage = (props) => {
       if(isAuthenticated) {
         authContext.setUser(user)
         authContext.setIsAuthenticated(isAuthenticated)
-        router.push('/todos')
+        router.push('/')
       }
       else
         setMessage(message)
@@ -58,6 +58,7 @@ const LoginPage = (props) => {
               onChange={e => setUser({...user,password:e.target.value})} />
 
         <button className='bg-green-400 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'>sign in</button>
+      <label className='mt-2'>Don't have an account? <Link href='/register' className='text-green-400'>Register</Link></label>
       </form>
       {message ? <Message message={message} /> : null}
     </div>

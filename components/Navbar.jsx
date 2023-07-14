@@ -41,8 +41,11 @@ const Navbar = (props) => {
         return (
             <div className='flex justify-center gap-8'>
                 <Link href='/'>home</Link>
-                <Link href="/todos">Todos</Link>
+                <Link href="/notes">Posts</Link>
                 {user.role === 'admin' ? <Link href="/admin">Admin</Link> : null}
+                {user.role === 'Superadmin' ? <Link href="/superadmin">Super Admin dashboard</Link> : null}
+                {user.role === 'Superadmin' ? <Link href='/manage/users'>Manage users</Link> : null}
+                {user.role === 'Superadmin' ? <Link href='/manage/admins'>Manage admins</Link> : null}
                 <button onClick={OnClickLogout}>Logout</button>
             </div>
         )
