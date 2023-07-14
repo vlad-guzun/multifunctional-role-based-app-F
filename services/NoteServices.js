@@ -41,5 +41,10 @@ export default {
         }).then(res => res.json())
           .then(data => data)
           .then(userNotes => userNotes)
-    }
+    },
+    //_____________________________UPDATE NOTE_______________________________________
+    updateNote: async(note) => {
+        const response = axios.put(`http://localhost:5000/user/note/${note._id}`, note, {withCredentials: true})
+        return response.data
+    }      
 }

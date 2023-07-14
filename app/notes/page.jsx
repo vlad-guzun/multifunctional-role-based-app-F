@@ -34,6 +34,7 @@ const NotesPage = () => {
   const deleteNote = async (id) => {
     await NoteServices.deleteNote(id)
   }
+
  
   return (
     <>

@@ -54,7 +54,6 @@ const Navbar = (props) => {
 
   return (
     <div>
-       <Link href="/">Logo-ul proiectului</Link> 
        {isAuthenticated ? AuthenticatedNav() : UnauthenticatedNav()}
     </div>
   )
